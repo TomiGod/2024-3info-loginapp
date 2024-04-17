@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { View } from "react-native";
-import { Text, TextInput } from "react-native-paper";
+import { Button, Text, TextInput } from "react-native-paper";
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
@@ -22,12 +22,12 @@ export default function LoginScreen() {
         placeholder="Digite sua senha"
         onChangeText={setSenha}
         value={senha}
-        secureTextEntry
-        />
+        secureTextEntry // faz com que o campo seja senha com *
+      />
       <Button onPress={realizaLogin}>Fazer Login</Button>
       <Button onPress={() => navigation.navigate("RegisterScreen")}>
-        Faça seu cadastro 
+        Faça seu cadastro
       </Button>
-   </View>
+    </View>
   );
 }
