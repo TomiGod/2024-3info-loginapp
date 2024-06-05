@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { View } from "react-native";
-import { Button, Text, TextInput } from "react-native-paper";
+import { Button, Surface, Switch, Text, TextInput } from "react-native-paper";
+import { useTheme } from "../contexts/ThemeContext";
+
 
 export default function LoginScreen({ navigation }) {
+  const {isDarkTheme, setIsDarkTheme} = useTheme();
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
@@ -11,7 +13,7 @@ export default function LoginScreen({ navigation }) {
   }
 
   return (
-    <View>
+    <Surface>
       <Text>Faça seu Login</Text>
       <TextInput
         placeholder="Digite seu e-mail"
@@ -26,8 +28,9 @@ export default function LoginScreen({ navigation }) {
       />
       <Button onPress={realizaLogin}>Fazer Login</Button>
       <Button onPress={() => navigation.navigate("RegisterScreen")}>
+      <Switch value={isDarkTheme} onValueChange={toggleTheme} />
         Faça seu cadastro
       </Button>
-    </View>
+    </Surface>
   );
 }

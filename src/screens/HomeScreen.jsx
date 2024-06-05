@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import { Button, Text } from "react-native-paper";
+import { Surface, Button, Text } from "react-native-paper";
 
 export default function HomeScreen({ navigation }) {
   return (
@@ -12,6 +12,15 @@ export default function HomeScreen({ navigation }) {
       >
         Login
       </Button>
+      export default function HomeScreen()
+      
+    <Surface
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    ></Surface>
     </View>
   );
 }
